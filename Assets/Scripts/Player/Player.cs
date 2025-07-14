@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using UnityEngine;
+using DG.Tweening;
 
 public class Player : MonoBehaviour
 {
@@ -14,6 +15,13 @@ public class Player : MonoBehaviour
     public float jumpForce = 2f;
 
     private float _currentSpeed;
+
+    [Header("Animation Setup")]
+    public float jumpScaleY = 1.5f;
+    public float jumpScaleX = .7f;
+    public float animationDuration = .3f;
+    public Ease ease = Ease.OutBack;
+
 
     void Update()
     {
@@ -59,6 +67,17 @@ public class Player : MonoBehaviour
         {
             //myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
             myRigidBody.velocity = Vector2.up * jumpForce;
+            myRigidBody.transform.localScale = Vector2.one;
+
+            DOTween.Kill(myRigidBody.transform);
+
+            HandleScaleJump();
         }
+    }
+
+    private void HandleScaleJump()
+    {
+        myRigidBody.transform.DOScaleY(jumpScaleY, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
+        myRigidBody.transform.DOScaleX(jumpScaleX, animationDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
     }
 }
