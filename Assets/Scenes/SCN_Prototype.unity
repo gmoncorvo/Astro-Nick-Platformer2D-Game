@@ -388,7 +388,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 1058524861}
+  friction: {x: -0.1, y: 0}
   speed: 10
+  jumpForce: 15
 --- !u!1 &1811480616
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +510,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1823173326}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 64b4e0534eadce648ba2c82f81890dfa, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
