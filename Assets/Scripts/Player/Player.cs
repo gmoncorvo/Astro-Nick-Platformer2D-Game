@@ -13,15 +13,20 @@ public class Player : MonoBehaviour
     public float speed;
     public float speedRun;
     public float jumpForce = 2f;
-
-    private float _currentSpeed;
-
+        
     [Header("Animation Setup")]
     public float jumpScaleY = 1.5f;
     public float jumpScaleX = .7f;
     public float animationDuration = .3f;
     public Ease ease = Ease.OutBack;
 
+    [Header("Animation Player")]
+    public string boolRun = "Run";
+    public Animator animator;
+    public float playerSwapDuration = .1f;
+
+    private bool _isRunning = false;
+    private float _currentSpeed;
 
     void Update()
     {
@@ -34,21 +39,37 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftShift))
         {
             _currentSpeed = speedRun;
+            animator.speed = 1.5f;
         }
         else
         {
             _currentSpeed = speed;
+            animator.speed = 1;
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             //myRigidBody.MovePosition(myRigidBody.position + velocity * Time.deltaTime);
             myRigidBody.velocity = new Vector2(_currentSpeed, myRigidBody.velocity.y);
+            if (myRigidBody.transform.localScale.x != 1)
+            {
+                myRigidBody.transform.DOScaleX(1, playerSwapDuration);
+            }
+            animator.SetBool(boolRun, true);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             //myRigidBody.MovePosition(myRigidBody.position - velocity * Time.deltaTime);
             myRigidBody.velocity = new Vector2(-_currentSpeed, myRigidBody.velocity.y);
+            if (myRigidBody.transform.localScale.x != -1)
+            {
+                myRigidBody.transform.DOScaleX(-1, playerSwapDuration);
+            }
+            animator.SetBool(boolRun, true);
+        }
+        else
+        {
+            animator.SetBool(boolRun, false);
         }
 
         if (myRigidBody.velocity.x > 0f)
