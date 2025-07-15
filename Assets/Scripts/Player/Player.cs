@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     public Animator animator;
     public float playerSwapDuration = .1f;
 
-    private bool _isRunning = false;
     private float _currentSpeed;
 
     void Update()
