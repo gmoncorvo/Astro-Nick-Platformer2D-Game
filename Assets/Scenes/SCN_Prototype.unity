@@ -343,7 +343,7 @@ MonoBehaviour:
   prefabProjectile: {fileID: 1559864279257505573, guid: 1620558e6cd6baf4eb8e2591947839b6, type: 3}
   ShotSpawn: {fileID: 916645998}
   timeBetweenShoot: 0.3
-  playerSideReference: {fileID: 1058524863}
+  playerSideReference: {fileID: 324836381}
 --- !u!212 &136295712 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7274142433465299202, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
