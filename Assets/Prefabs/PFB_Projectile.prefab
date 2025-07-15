@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: 0}
+  timeToDestroy: 2
+  side: 1
 --- !u!58 &9190950164170785860
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -96,6 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 35, y: 0, z: 0}
+  timeToDestroy: 2
+  side: 1
 --- !u!1 &4047561641241623561
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +174,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 15
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4978195, g: 0.6621594, b: 0.9339623, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

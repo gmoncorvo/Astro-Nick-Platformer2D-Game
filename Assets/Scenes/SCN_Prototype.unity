@@ -342,6 +342,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabProjectile: {fileID: 1559864279257505573, guid: 1620558e6cd6baf4eb8e2591947839b6, type: 3}
   ShotSpawn: {fileID: 916645998}
+  timeBetweenShoot: 0.3
+  playerSideReference: {fileID: 1058524863}
 --- !u!212 &136295712 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7274142433465299202, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
@@ -3047,7 +3049,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1058524862
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3134,8 +3136,8 @@ MonoBehaviour:
   speed: 10
   speedRun: 20
   jumpForce: 15
-  jumpScaleY: 1.5
-  jumpScaleX: 0.7
+  jumpScaleY: 1.1
+  jumpScaleX: 1.1
   animationDuration: 0.3
   ease: 27
   boolRun: Run
