@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunBase : MonoBehaviour
@@ -11,8 +10,8 @@ public class GunBase : MonoBehaviour
     public Transform playerSideReference;
 
     private Coroutine _currentCoroutine;
-    
-    
+
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse1))
